@@ -8,6 +8,7 @@ options=(("A.Whale","B.Elephant","C.Tiger"),
 question_num=0
 answer=["A","A","B"]
 guess=[]
+score=0
 for x in questions:
     print("\n")
     print(x)
@@ -16,6 +17,7 @@ for x in questions:
     user=input("Enter option(A,B,C,D):").upper()
     guess.append(user)
     if guess[question_num]==answer[question_num]:
+        score+=1
         print("Your Answer is correct!")
     else:
         print("Incorrect!")
@@ -23,3 +25,21 @@ for x in questions:
 
     
     question_num+=1
+print()
+
+print("-----------",end="")
+print("RESULTS",end="")
+print("-----------")
+
+print("ANSWER:",end="")
+for a in answer:
+    print(a,end="")
+print()
+
+print("GUESSES:",end="")
+for b in guess:
+    print(b,end="")
+print()
+
+score= int(score/len(questions) * 100)
+print(f"Your score is {score}")
